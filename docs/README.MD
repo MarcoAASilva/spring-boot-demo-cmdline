@@ -14,9 +14,9 @@ Granted that most CLI tools may start out as simple main() functions.
 
 However, any useful tool will require ever more complex features and configurations.
 
-[Spring Boot](https://projects.spring.io/spring-boot/) makes it easier to create stand-alone Spring based Applications  
+[Spring Boot](https://projects.spring.io/spring-boot/) makes it easier to create stand-alone Spring based applications  
 
-In general, [learning resources for Spring](https://spring.io/guides) are not too bad.  Spring Boot comes with its own [set of samples](https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples).
+[Learning resources for Spring](https://spring.io/guides) are not too bad, and Spring Boot comes with its own [set of samples](https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples).
 
 # Features
 
