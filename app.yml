@@ -11,6 +11,6 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=prod
       - BIN_PACKAGE_PREFIX=spring-boot-demo-cmdline-Vanilla     
-      - POST_EXEC_SLEEP_INTERVAL=180
+      - POST_EXEC_SLEEP_INTERVAL=30
     volumes:
       - ./dist:/tmp/dist

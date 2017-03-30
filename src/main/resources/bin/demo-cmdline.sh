@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+# damn Linux/Windows line endings
 
 # OS specific support (must be 'true' or 'false').
 cygwin=false;

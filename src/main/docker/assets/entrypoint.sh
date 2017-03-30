@@ -1,5 +1,3 @@
-echo 
-
 echo configuring demo-cmdline from package $BIN_PACKAGE_PREFIX...
 
 unzip -o /tmp/dist/$BIN_PACKAGE_PREFIX-bin.zip -d ~
