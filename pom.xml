@@ -11,7 +11,7 @@
 		<java.version>1.8</java.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.source>1.8</maven.compiler.source>
-		<start.class>br.net.neuromancer.cmdline.EntryPoint</start.class>
+		<start.class>br.net.neuromancer.cmdline.vanilla.EntryPoint</start.class>
 	</properties>
 
 	<!-- Inherit defaults from Spring Boot -->
@@ -61,7 +61,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<finalName>cmdline</finalName>
+					<finalName>demo-cmdline</finalName>
 					<mainClass>${start.class}</mainClass>
 				</configuration>
 				<executions>
