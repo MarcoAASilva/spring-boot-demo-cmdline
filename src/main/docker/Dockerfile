@@ -1,9 +1,12 @@
 FROM openjdk:8-jre-alpine
 
-ARG basedir=src/main/docker
-
-COPY ${basedir}/assets/entrypoint.sh /entrypoint.sh
+COPY assets/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-ENTRYPOINT ["bin/sh", "/entrypoint.sh"]
+COPY assets/dist/spring-boot-demo-cmdline-Vanilla-bin.zip /tmp
+
+CMD unzip -o /tmp/spring-boot-demo-cmdline-Vanilla-bin.zip -d ~ && \
+	chmod a+x ~/spring-boot-demo-cmdline-Vanilla/bin/demo-cmdline.sh && \
+	~/spring-boot-demo-cmdline-Vanilla/bin/demo-cmdline.sh  && \
+	sleep 30s
     

@@ -1,10 +1,7 @@
-# this configuration is used for the PaymentModel#1.0 tool
-# it uses the new docker-tribefire strategy
-#
 version: '2'
 services:
-  demo_cmdline:
-    container_name: demo_cmdline
+  demo:
+    container_name: demo-cmdline
     build:
       context: .
       dockerfile: ./src/main/docker/Dockerfile
@@ -12,5 +9,3 @@ services:
       - SPRING_PROFILES_ACTIVE=prod
       - BIN_PACKAGE_PREFIX=spring-boot-demo-cmdline-Vanilla     
       - POST_EXEC_SLEEP_INTERVAL=30
-    volumes:
-      - ./dist:/tmp/dist
