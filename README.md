@@ -9,22 +9,41 @@ How to bootstrap a command line tool with Spring-Boot
 mvn.cmd clean package
 
 ```
-This target will create a binary assembly at the dist folder.  
+This Maven target will create a binary assembly at the dist folder.  
 
-The assembly follows the convention **spring-boot-demo-cmdline-${project.version}-bin.zip** 
-
-The assembly may include assets placed under **src/main/resources**: auxiliary files, folder structures, and execution scripts.
-
-The packaging of the distribution assembly is configured from **src/assembly/cli-assembly.xml**
+The assembly follows the convention **spring-boot-demo-cmdline-${project.version}-bin.zip**  The zipped pack include assets placed under **src/main/resources**: auxiliary files, folder structures, and execution scripts.  Configuration for the assembly is at **src/assembly/cli-assembly.xml**
 
 ## uber-JAR
 
 An executable uber-JAR **demo-cmdline.jar** is created at the target folder.
 
-The uber-JAR contains all dependencies, which is good for a distribution
+The uber-JAR contains all dependencies, which is good choice for a distribution.
+
+
+# Available Distributions
+
+The start.class is a property defined at **pom.xml**
+
+## Vanilla
+
+
+```xml
+	<properties>
+	...
+		<start.class>br.net.neuromancer.cmdline.vanilla.EntryPoint</start.class>
+	</properties>
+```
+
+Runs an empty context, and pretty much does nothing else
+
+# Banner
+
+As usual for Spring-Boot apps, the initial MOTD comes from *src/resources/banner.txt*
 
 
 # Docker 
+
+You may use Docker to see the application in action.
 
 If necessary, adjust environment variables BIN_PACKAGE_PREFIX and SLEEP_INTERVAL on **/app.yml**
 
@@ -55,21 +74,6 @@ docker exec -it demo_cmdline bin/sh
 
 ```
 
-# Available Distributions
-
-The start.class is a property defined at **pom.xml**
-
-##Vanilla
-
-
-```xml
-	<properties>
-	...
-		<start.class>br.net.neuromancer.cmdline.vanilla.EntryPoint</start.class>
-	</properties>
-```
-
-Runs an empty context, and pretty much does nothing else
 
 
 
