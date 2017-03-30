@@ -75,7 +75,7 @@ docker exec -it demo_cmdline bin/sh
 ```
 
 
-# (Visit us)[https://neuromancernet.github.io/spring-boot-demo-cmdline/] @ GitHubPages
+### [Visit us on GitHub Pages](https://neuromancernet.github.io/spring-boot-demo-cmdline/)
 
 
 
