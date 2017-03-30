@@ -20,7 +20,7 @@ An executable uber-JAR **demo-cmdline.jar** is created at the target folder.
 The uber-JAR contains all dependencies, which is good choice for a distribution.
 
 
-# Available Distributions
+# Tagged Distributions
 
 The start.class is a property defined at **pom.xml**
 
@@ -34,11 +34,11 @@ The start.class is a property defined at **pom.xml**
 	</properties>
 ```
 
-Runs an empty context, and pretty much does nothing else
+Runs an empty context, used for bootstrapping, pretty much does nothing else
 
 # Banner
 
-As usual for Spring-Boot apps, the initial MOTD comes from *src/resources/banner.txt*
+As usual for Spring-Boot apps, the MOTD is configured on *src/resources/banner.txt*
 
 
 # Docker 
@@ -73,6 +73,9 @@ CONTAINER ID        IMAGE                                COMMAND                
 docker exec -it demo_cmdline bin/sh
 
 ```
+
+
+# (Visit us)[https://neuromancernet.github.io/spring-boot-demo-cmdline/] @ GitHubPages
 
 
 
