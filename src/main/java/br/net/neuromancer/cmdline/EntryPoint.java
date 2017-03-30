@@ -11,7 +11,7 @@ public class EntryPoint {
 	private static Logger logger = LoggerFactory.getLogger(EntryPoint.class);
 
 	public static void main (String[] args){
-		logger.info("Hello World, CmdLine 2!");
+		logger.info("Hello World, CmdLine 3!");
 		
 	}
 	
