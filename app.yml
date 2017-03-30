@@ -10,7 +10,7 @@ services:
       dockerfile: ./src/main/docker/Dockerfile
     environment:
       - SPRING_PROFILES_ACTIVE=prod
-      - BIN_PACKAGE_PREFIX=spring-boot-demo-cmdline-0.0.1     
+      - BIN_PACKAGE_PREFIX=spring-boot-demo-cmdline-Vanilla     
       - POST_EXEC_SLEEP_INTERVAL=180
     volumes:
       - ./dist:/tmp/dist

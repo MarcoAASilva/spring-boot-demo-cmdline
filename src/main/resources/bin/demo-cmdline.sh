@@ -92,4 +92,4 @@ if $cygwin; then
 	CLASSPATH=`cygpath --path --mixed "$CLASSPATH"`
 fi
 
-"${JAVA_HOME}/bin/java" ${JAVA_OPTS} -jar $CMDLINE_HOME/lib/cmdline.jar "$@"
+"${JAVA_HOME}/bin/java" ${JAVA_OPTS} -jar $CMDLINE_HOME/lib/demo-cmdline.jar "$@"
