@@ -79,7 +79,26 @@ docker exec -it demo_cmdline bin/sh
 
 Watch out for commits to branch *gh-pages*
 
+```
+$ git push origin --delete gh-pages
 
+$ git branch -D gh-pages
+Deleted branch gh-pages (was 3385caa).
+
+$ git init
+Reinitialized existing Git repository in D:/spring-boot-demo-cmdline/.git/
+
+$ git branch gh-pages
+
+$ git push origin gh-pages
+Total 0 (delta 0), reused 0 (delta 0)
+To github.com:NeuromancerNet/spring-boot-demo-cmdline.git
+ * [new branch]      gh-pages -> gh-pages
+
+$ git branch
+  gh-pages
+* master
+```
 
 [Visit us](https://neuromancernet.github.io/spring-boot-demo-cmdline/)
 
