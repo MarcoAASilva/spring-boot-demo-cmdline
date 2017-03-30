@@ -100,7 +100,7 @@ $ git branch
 * master
 ```
 
-[Visit us](https://neuromancernet.github.io/spring-boot-demo-cmdline/)
+[Visit us there](https://neuromancernet.github.io/spring-boot-demo-cmdline/)
 
 
 
