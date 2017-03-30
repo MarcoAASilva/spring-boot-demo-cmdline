@@ -1,8 +1,5 @@
 FROM openjdk:8-jre-alpine
 
-COPY assets/entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-
 COPY assets/dist/spring-boot-demo-cmdline-Vanilla-bin.zip /tmp
 
 CMD unzip -o /tmp/spring-boot-demo-cmdline-Vanilla-bin.zip -d ~ && \

@@ -1,7 +1,25 @@
-# spring-boot-cmdline
+# spring-boot-demo-cmdline
 How to bootstrap a command line tool with Spring-Boot
 
+[Visit us at GitHub Pages](https://marcoaasilva.github.io/spring-boot-demo-cmdline/)
+
 # Getting started
+
+## Vanilla
+The [POC release](https://en.wikipedia.org/wiki/Proof_of_concept) runs an empty context, used for bootstrapping, pretty much does nothing else
+
+### Fast-lane with Docker
+
+```bash
+docker pull dreamcaster/spring-boot-demo-cmdline:Vanilla
+
+docker run dreamcaster/spring-boot-demo-cmdline:Vanilla
+
+```
+
+##Implementation Details
+
+### Building from source
 
 * build the distribution assembly
 
@@ -9,23 +27,18 @@ How to bootstrap a command line tool with Spring-Boot
 mvn.cmd clean package
 
 ```
-This Maven target will create a binary assembly at the dist folder.  
+This Maven target will create a binary assembly ZIP at *src/docker/assets/dist*.  
 
-The assembly follows the convention **spring-boot-demo-cmdline-${project.version}-bin.zip**  The zipped pack include assets placed under **src/main/resources**: auxiliary files, folder structures, and execution scripts.  Configuration for the assembly is at **src/assembly/cli-assembly.xml**
+### assembly configuration
 
-## uber-JAR
+Configuration for the assembly is found at *src/assembly/cli-assembly.xml*
 
-An executable uber-JAR **demo-cmdline.jar** is created at the target folder.
-
-The uber-JAR contains all dependencies, which is good choice for a distribution.
+Binary assembly ZIP may also include assets placed under *src/main/resources*: sample files, folder structures, and execution scripts.
 
 
-# Tagged Distributions
+### configuration of target JAR
 
-The start.class is a property defined at **pom.xml**
-
-## Vanilla
-
+The start.class is defined at *pom.xml*
 
 ```xml
 	<properties>
@@ -34,74 +47,97 @@ The start.class is a property defined at **pom.xml**
 	</properties>
 ```
 
-Runs an empty context, used for bootstrapping, pretty much does nothing else
 
-# Banner
+### uber-JAR
 
-As usual for Spring-Boot apps, the MOTD is configured on *src/resources/banner.txt*
+An executable uber-JAR *demo-cmdline.jar* is created at the target folder.
+
+The uber-JAR contains all dependencies, which is usually a good choice for a distribution.
+
+
+### Banner
+
+As usual for Spring-Boot, the MOTD may be configured on *src/resources/banner.txt*
 
 
 # Docker 
 
-You may use Docker to see the application in action.
-
-If necessary, adjust environment variables BIN_PACKAGE_PREFIX and SLEEP_INTERVAL on **/app.yml**
-
-Then in a command prompt:
+## slow lane (only after building from source)
 
 ```bash
 docker-compose -f app.yml up --build
 
 ```
 
-## Docker details
+### details
 
-The main Dockerfile is placed under **src/main/docker**
+The main Dockerfile is placed under *src/main/docker*
 
-The script *entrypoint.sh* unzips the distribution assembly to home, runs *~/BIN_PACKAGE_PREFIX/bin/demo-cmdline.sh*, then sleeps
+Binary distributions is unzipped,  *~/BIN_PACKAGE_PREFIX/bin/demo-cmdline.sh* gets executed, then sleeps.
 
-The sleep interval comes in handy for debugging.  Otherwise the container only executes, then exits immediately
+The sleep comes in handy for debugging: otherwise the container would only execute, exiting immediately
 
-Inspect the container while it's still alive with:
+While sleeping, you may inspect the container:
 
 ```bash
 
 $ docker ps -a
-CONTAINER ID        IMAGE                                COMMAND                  CREATED             STATUS                      PORTS                  NAMES
-11f1a1903192        springbootdemocmdline_demo_cmdline   "bin/sh /entrypoin..."   24 seconds ago      Up 23 seconds                                      demo_cmdline
 
-docker exec -it demo_cmdline bin/sh
+$docker exec -it demo_cmdline bin/sh
 
 ```
 
+# GitHub Pages
 
-## GitHub Pages
+Sourced from the project README.MD of on branch *gh-pages*
 
-Watch out for commits to branch *gh-pages*
+Update on master, then replace the gh-branch
 
 ```
 $ git push origin --delete gh-pages
 
 $ git branch -D gh-pages
-Deleted branch gh-pages (was 3385caa).
 
 $ git init
-Reinitialized existing Git repository in D:/spring-boot-demo-cmdline/.git/
 
 $ git branch gh-pages
 
 $ git push origin gh-pages
-Total 0 (delta 0), reused 0 (delta 0)
-To github.com:NeuromancerNet/spring-boot-demo-cmdline.git
- * [new branch]      gh-pages -> gh-pages
 
 $ git branch
-  gh-pages
-* master
 ```
 
-[Visit us there](https://neuromancernet.github.io/spring-boot-demo-cmdline/)
+
+# Git Tagging
+
+Tags are synchronized on DockerHub as well.
+
+## adding a Tag
+
+```                                                                 
+$git tag -a Vanilla -m "just a POC for automated builds"
+
+$git tag
+
+$git git push origin Vanilla
+```                                                                 
 
 
+## removing a Tag
+
+```                                                                 
+$ git tag                                                                    
+Vanilla                                                                      
+                                                                             
+$ git tag -d Vanilla                                                         
+Deleted tag 'Vanilla' (was 3154b85)                                          
+                                                                             
+$ git push origin :refs/tags/Vanilla                                         
+To github.com:MarcoAASilva/spring-boot-demo-cmdline.git                      
+ - [deleted]         Vanilla                                                 
+                                                                             
+$ git tag                                                                    
+
+```
 
 
