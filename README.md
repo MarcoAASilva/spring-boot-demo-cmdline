@@ -71,6 +71,13 @@ docker-compose -f app.yml up --build
 
 ```
 
+To remove all running containers
+
+```bash
+docker rm $(docker ps -a -f status=exited -q)
+```
+
+
 ### details
 
 The main Dockerfile is placed under *src/main/docker*
@@ -146,4 +153,6 @@ $ git tag
 
 ```
 
+# References
 
+[Docker Cheat Sheet](https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes)

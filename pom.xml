@@ -78,6 +78,8 @@
 				<configuration>
 					<descriptor>src/assembly/cli-assembly.xml</descriptor>
 					<outputDirectory>${dist}</outputDirectory>
+					<finalName>spring-boot-demo-cmdline</finalName>
+  					<appendAssemblyId>false</appendAssemblyId>
 				</configuration>
 				<executions>
 					<execution>
