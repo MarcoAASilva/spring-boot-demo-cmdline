@@ -5,10 +5,12 @@ How to bootstrap a command line tool with Spring-Boot
 
 # Getting started
 
-## Vanilla
-The [POC release](https://en.wikipedia.org/wiki/Proof_of_concept) runs an empty context, used for bootstrapping, pretty much does nothing else
+| tag     | Description     |
+| --------|-----------------|
+| latest  |                 |
+| Vanilla | The [POC release](https://en.wikipedia.org/wiki/Proof_of_concept) runs an empty context, used for bootstrapping, pretty much does nothing else    |
 
-### Fast-lane with Docker
+## Fast-lane with Docker
 
 ```bash
 docker pull dreamcaster/spring-boot-demo-cmdline:Vanilla
