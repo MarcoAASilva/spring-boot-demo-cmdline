@@ -64,19 +64,24 @@ As usual for Spring-Boot, the MOTD may be configured on *src/resources/banner.tx
 
 ## Docker 
 
-### slow lane (only after building from source)
+### slow lane
 
 ```bash
 docker-compose -f app.yml up --build
 
 ```
 
-To remove all running containers
+To remove all exited containers
 
 ```bash
 docker rm $(docker ps -a -f status=exited -q)
 ```
 
+To remove all images
+
+```bash
+docker rm $(docker ps -a -f status=exited -q)
+```
 
 ### details
 
