@@ -1,9 +1,18 @@
-FROM openjdk:8-jre-alpine
+FROM maven:3.3.9-jdk-8-alpine
+MAINTAINER Marco A. A. Silva <marco.silva@bytewood.com>
 
-COPY assets/dist/spring-boot-demo-cmdline-Vanilla-bin.zip /tmp
+RUN apk add --no-cache \
+    bash \
+    git 
 
-CMD unzip -o /tmp/spring-boot-demo-cmdline-Vanilla-bin.zip -d ~ && \
-	chmod a+x ~/spring-boot-demo-cmdline-Vanilla/bin/demo-cmdline.sh && \
-	~/spring-boot-demo-cmdline-Vanilla/bin/demo-cmdline.sh  && \
-	sleep 30s
+RUN git clone https://github.com/MarcoAASilva/spring-boot-demo-cmdline.git ~/repo && \
+	cd ~/repo && \
+	mvn clean package && \
+	unzip -o ~/repo/src/main/docker/assets/dist/spring-boot-demo-cmdline.zip -d ~ && \
+	chmod a+x ~/spring-boot-demo-cmdline/bin/demo-cmdline.sh && \
+	rm ~/repo -rf
+
+ENTRYPOINT ["/bin/sh","root/spring-boot-demo-cmdline/bin/demo-cmdline.sh"]
+
+CMD sleep 3000
     
