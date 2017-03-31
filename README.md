@@ -1,7 +1,7 @@
 # spring-boot-demo-cmdline
 How to bootstrap a command line tool with Spring-Boot
 
-[Visit us at GitHub Pages](https://marcoaasilva.github.io/spring-boot-demo-cmdline/)
+Visit us at [GitHub Pages](https://marcoaasilva.github.io/spring-boot-demo-cmdline/) and [Docker Hub](https://hub.docker.com/r/dreamcaster/spring-boot-demo-cmdline/)
 
 # Getting started
 
@@ -90,6 +90,10 @@ $docker exec -it demo_cmdline bin/sh
 ```
 
 # GitHub Pages
+
+```
+bash ./updateGitHubPages.sh
+```
 
 Sourced from the project README.MD of on branch *gh-pages*
 
