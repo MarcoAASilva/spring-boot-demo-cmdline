@@ -3,14 +3,14 @@ How to bootstrap a command line tool with Spring-Boot
 
 Visit us at [GitHub Pages](https://marcoaasilva.github.io/spring-boot-demo-cmdline/) and [Docker Hub](https://hub.docker.com/r/dreamcaster/spring-boot-demo-cmdline/)
 
-# Getting started
+# Available tags
 
 | tag     | Description     |
 | --------|-----------------|
 | latest  |                 |
 | Vanilla | The [POC release](https://en.wikipedia.org/wiki/Proof_of_concept) runs an empty context, used for bootstrapping, pretty much does nothing else    |
 
-## Fast-lane with Docker
+## Fast-lane Start with Docker
 
 ```bash
 docker pull dreamcaster/spring-boot-demo-cmdline:Vanilla
@@ -19,7 +19,7 @@ docker run dreamcaster/spring-boot-demo-cmdline:Vanilla
 
 ```
 
-#Implementation Details
+# Implementation Details
 
 ## Building from source
 
@@ -118,7 +118,7 @@ $ git branch
 
 Tags are synchronized on DockerHub as well.
 
-## adding a Tag
+## add a Tag
 
 ```                                                                 
 $git tag -a Vanilla -m "just a POC for automated builds"
@@ -129,7 +129,7 @@ $git git push origin Vanilla
 ```                                                                 
 
 
-## removing a Tag
+## remove a Tag
 
 ```                                                                 
 $ git tag                                                                    
