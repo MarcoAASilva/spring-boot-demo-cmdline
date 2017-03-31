@@ -19,9 +19,9 @@ docker run dreamcaster/spring-boot-demo-cmdline:Vanilla
 
 ```
 
-##Implementation Details
+#Implementation Details
 
-### Building from source
+## Building from source
 
 * build the distribution assembly
 
@@ -62,9 +62,9 @@ The uber-JAR contains all dependencies, which is usually a good choice for a dis
 As usual for Spring-Boot, the MOTD may be configured on *src/resources/banner.txt*
 
 
-# Docker 
+## Docker 
 
-## slow lane (only after building from source)
+### slow lane (only after building from source)
 
 ```bash
 docker-compose -f app.yml up --build
